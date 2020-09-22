@@ -1,2 +1,2 @@
 # docker-android-sdk-nodejs
-Image based on lastest NodesJS LTS with Android SDK
+Image based on lastest NodeJS LTS with Android SDK
