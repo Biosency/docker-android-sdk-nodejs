@@ -36,3 +36,5 @@ RUN ${ANDROID_SDK_HOME}/tools/bin/sdkmanager "build-tools;29.0.3" \
   && ${ANDROID_SDK_HOME}/tools/bin/sdkmanager "system-images;android-29;google_apis;x86_64"
 
 CMD /opt/tools/entrypoint.sh built-in
+
+RUN npm i -g cordova
