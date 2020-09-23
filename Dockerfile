@@ -56,5 +56,4 @@ RUN set -o errexit -o nounset \
     && rm gradle.zip \
     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/" \
     \
-    && echo "Testing Gradle installation" \
-    && gradle --version
+    && echo "Testing Gradle installation"
