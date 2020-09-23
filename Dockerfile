@@ -1,4 +1,5 @@
 FROM node:lts
+LABEL author="Biosency IT | web@biosency.com" version="1.0"
 
 ENV ANDROID_SDK_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK_ROOT /opt/android-sdk-linux
@@ -41,7 +42,7 @@ ENV CORDOVA_VERSION 9.0.0
 RUN npm i -g cordova@${CORDOVA_VERSION}
 
 ENV GRADLE_HOME /opt/gradle
-ENV PATH "${PATH}:${GRADLE_HOME}"
+ENV PATH "${PATH}:${GRADLE_HOME}/bin"
 ENV GRADLE_VERSION 6.6.1
 ARG GRADLE_DOWNLOAD_SHA256=7873ed5287f47ca03549ab8dcb6dc877ac7f0e3d7b1eb12685161d10080910ac
 RUN set -o errexit -o nounset \
@@ -56,4 +57,5 @@ RUN set -o errexit -o nounset \
     && rm gradle.zip \
     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/" \
     \
-    && echo "Testing Gradle installation"
+    && echo "Testing Gradle installation" \
+    && gradle --version
