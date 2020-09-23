@@ -40,6 +40,7 @@ CMD /opt/tools/entrypoint.sh built-in
 ENV CORDOVA_VERSION 9.0.0
 RUN npm i -g cordova@${CORDOVA_VERSION}
 
+ENV GRADLE_HOME /opt/gradle
 ENV GRADLE_VERSION 6.6.1
 ARG GRADLE_DOWNLOAD_SHA256=7873ed5287f47ca03549ab8dcb6dc877ac7f0e3d7b1eb12685161d10080910ac
 RUN set -o errexit -o nounset \
@@ -53,7 +54,6 @@ RUN set -o errexit -o nounset \
     && unzip gradle.zip \
     && rm gradle.zip \
     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/" \
-    && ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle \
     \
     && echo "Testing Gradle installation" \
     && gradle --version
