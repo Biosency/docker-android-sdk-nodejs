@@ -4,7 +4,7 @@ LABEL author="Biosency IT | web@biosency.com" version="1.0"
 ENV ANDROID_SDK_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK_ROOT /opt/android-sdk-linux
 
-ENV PATH "${PATH}:${ANDROID_SDK_HOME}/platform-tools:${ANDROID_SDK_HOME}/tools/bin:${ANDROID_SDK_HOME}/emulator:${ANDROID_SDK_HOME}/bin"
+ENV PATH "${PATH}:${ANDROID_SDK_HOME}/platform-tools:${ANDROID_SDK_HOME}/tools:${ANDROID_SDK_HOME}/tools/bin:${ANDROID_SDK_HOME}/emulator:${ANDROID_SDK_HOME}/bin"
 
 RUN dpkg --add-architecture i386 && apt-get update -yqq && apt-get install -y \
   curl \
