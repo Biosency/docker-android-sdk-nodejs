@@ -1,5 +1,7 @@
 FROM androidsdk/android-29
 LABEL author="Biosency IT | web@biosency.com" version="1.0"
 
-RUN apt-get update && apt-get install -y gradle=6.6.1 \
-	nodejs=12.18.4
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - \
+	&& apt-get update \
+	&& apt-get install -y gradle \
+		nodejs
