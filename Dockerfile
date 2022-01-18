@@ -1,4 +1,4 @@
-FROM androidsdk/android-29
+FROM androidsdk/android-30
 LABEL author="Biosency IT | web@biosency.com" version="1.0"
 
 RUN apt-get update \
